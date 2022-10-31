@@ -25,6 +25,7 @@ jobs:
           NOTION_SPACE_ID: ${{ secrets.NOTION_SPACE_ID }}
           NOTION_USER_ID: ${{ secrets.NOTION_USER_ID }}
 
+
       - name: Checkout backup repo
         uses: actions/checkout@v2
         with:
@@ -33,12 +34,10 @@ jobs:
           path: "backup-repo"
           
       - name: delete previous branch data to fix merge conflict
-        env:
-          REPO_EMAIL: ${{ secrets.REPO_EMAIL }}
-          REPO_USERNAME: ${{ secrets.REPO_USERNAME }}
         run: |
-          rm -r
-      
+          rm -r scss
+          ls -la
+
       - name: Commit changes to backup repo
         env:
           REPO_EMAIL: ${{ secrets.REPO_EMAIL }}
