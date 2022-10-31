@@ -33,10 +33,11 @@ jobs:
           token: ${{ secrets.REPO_PERSONAL_ACCESS_TOKEN }}
           path: "backup-repo"
           
-      - name: delete previous branch data to fix merge conflict
-        run: |
-          rm -r
-          ls -la
+      - name: Remove File
+        uses: JesseTG/rm@v1.0.3
+        with:
+         path: /path/to/something/you/want/to/delete
+
 
       - name: Commit changes to backup repo
         env:
