@@ -43,6 +43,10 @@ jobs:
           git config --local user.name "${REPO_USERNAME}"
           git rm -r *
           git add .
+          git commit -m "Delete Previous branch"
+          git push
+          git pull 
+          git add .
           if [ -z "$(git status --porcelain)" ]; then
             exit 0
           fi
