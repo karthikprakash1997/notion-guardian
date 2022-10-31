@@ -30,7 +30,7 @@ jobs:
         with:
           repository: ${{ secrets.REPO_USERNAME }}/${{ secrets.REPO_NAME }}
           token: ${{ secrets.REPO_PERSONAL_ACCESS_TOKEN }}
-          path: "backup-repo"
+          path: "backup-repo-1"
       
       - name: Commit changes to backup repo
         env:
