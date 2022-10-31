@@ -35,7 +35,7 @@ jobs:
           
       - name: delete previous branch data to fix merge conflict
         run: |
-          rm -r scss
+          rm -r
           ls -la
 
       - name: Commit changes to backup repo
