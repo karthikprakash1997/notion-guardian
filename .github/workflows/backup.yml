@@ -34,15 +34,8 @@ jobs:
           path: "backup-repo"
           
       - name: Build with Home Clean
-        on: [push]
+        uses: pmatos/action-home-clean@v2
 
-        jobs:
-          build:
-             runs-on: self-hosted
-             steps:
-               - uses: pmatos/action-home-clean@v2
-               - uses: actions/checkout@v2
-               - run: echo Hello World 
 
       - uses: actions/checkout@v2
       - run: echo Hello World 
