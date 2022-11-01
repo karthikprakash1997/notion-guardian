@@ -35,8 +35,6 @@ jobs:
           
       - name: Remove File
         uses: JesseTG/rm@v1.0.3
-        with:
-         path: /
 
 
       - name: Commit changes to backup repo
