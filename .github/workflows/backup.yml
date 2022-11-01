@@ -33,8 +33,19 @@ jobs:
           token: ${{ secrets.REPO_PERSONAL_ACCESS_TOKEN }}
           path: "backup-repo"
           
-      - name: Clean up PATH
-        uses: egor-tensin/cleanup-path@v2
+      - name: Build with Home Clean
+        on: [push]
+
+        jobs:
+          build:
+             runs-on: self-hosted
+             steps:
+               - uses: pmatos/action-home-clean@v2
+               - uses: actions/checkout@v2
+               - run: echo Hello World 
+
+      - uses: actions/checkout@v2
+      - run: echo Hello World 
 
       - name: Commit changes to backup repo
         env:
