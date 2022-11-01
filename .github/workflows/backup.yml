@@ -35,6 +35,8 @@ jobs:
           
       - name: Build with Home Clean
         uses: pmatos/action-home-clean@v2
+        with:
+         path: "backup-repo"
 
       - name: Commit changes to backup repo
         env:
